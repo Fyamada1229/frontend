@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import "./index.css";
 import { useSelector, useDispatch } from "react-redux";
+import { Field, reduxForm } from "redux-form";
 import { Button } from "@mui/material";
 import Post from "./page/Post";
 
@@ -17,6 +18,14 @@ const App = () => {
   };
 
   console.log(useSelector((state) => state.countReducer));
+
+  const titles = () => {
+    return (
+      <div>
+        <h1>title</h1>
+      </div>
+    );
+  };
 
   return (
     <>

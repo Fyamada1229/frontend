@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Field, reduxForm } from "redux-form";
 import { getPosts } from "../reducers/PostReducer";
 
 const Post = () => {
