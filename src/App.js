@@ -19,14 +19,6 @@ const App = () => {
 
   console.log(useSelector((state) => state.countReducer));
 
-  const titles = () => {
-    return (
-      <div>
-        <h1>title</h1>
-      </div>
-    );
-  };
-
   return (
     <>
       <div className="App">
@@ -45,5 +37,4 @@ const App = () => {
     </>
   );
 };
-
 export default App;
