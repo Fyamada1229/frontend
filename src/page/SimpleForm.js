@@ -1,8 +1,11 @@
 import React from "react";
 import { Field, reduxForm, change } from "redux-form";
+import { useSelector, useDispatch, connect } from "react-redux";
 
 const SimpleForm = (props) => {
   const { handleSubmit, change } = props;
+  const count = useSelector((state) => state.countReducer.count);
+  const dispatch = useDispatch();
 
   return (
     <form onSubmit={handleSubmit}>
@@ -12,8 +15,7 @@ const SimpleForm = (props) => {
           <Field name="name" component="input" type="text" />
           <Field name="email" component="input" type="text" />
           <Field name="性別" component="select" type="select">
-            <option value={0}>男性</option>
-            <option value={1}>女性</option>
+            <option value={count}>{count}</option>
           </Field>
         </label>
       </div>
