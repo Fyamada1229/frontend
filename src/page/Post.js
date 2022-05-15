@@ -7,6 +7,8 @@ const Post = () => {
   const posts = useSelector((state) => state.postsReducer.posts);
   const dispatch = useDispatch();
 
+  console.log(posts);
+
   useEffect(() => {
     dispatch(getPosts());
   }, [dispatch]);

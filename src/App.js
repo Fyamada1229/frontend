@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import "./index.css";
 import { useSelector, useDispatch, connect } from "react-redux";
@@ -6,11 +6,11 @@ import { Field, reduxForm } from "redux-form";
 import { Button } from "@mui/material";
 import Post from "./page/Post";
 import SimpleForm from "./page/SimpleForm";
-import showResults from "./page/showResults";
 
 const App = () => {
   const count = useSelector((state) => state.countReducer.count);
   const dispatch = useDispatch();
+  const posts = useSelector((state) => state.posts);
 
   const increase = () => {
     dispatch({ type: "INCREASE_COUNT" });
@@ -18,8 +18,9 @@ const App = () => {
   const decrease = () => {
     dispatch({ type: "DECREASE_COUNT" });
   };
-
-  console.log(useSelector((state) => state.countReducer.count));
+  const getPostDate = () => {
+    dispatch({ type: "GET_POST_DATA" });
+  };
 
   return (
     <>
@@ -34,9 +35,10 @@ const App = () => {
           DOWN
         </Button>
         <h1 className="mb-3">====================================</h1>
-        <SimpleForm onSubmit={showResults} />
+        <SimpleForm onSubmit={getPostDate} />
       </div>
-      {/* <Post /> */}
+      {/* このPostを使って値を取ってくる */}
+      <Post />
     </>
   );
 };

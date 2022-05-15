@@ -5,7 +5,6 @@ import { useSelector, useDispatch, connect } from "react-redux";
 const SimpleForm = (props) => {
   const { handleSubmit, change } = props;
   const count = useSelector((state) => state.countReducer.count);
-  const dispatch = useDispatch();
 
   return (
     <form onSubmit={handleSubmit}>

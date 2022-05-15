@@ -14,17 +14,4 @@ export const reedEvents = (state = initialState, action) => {
   }
 };
 
-// 非同期処理
-export const postsEvent = () => {
-  return async (dispatch) => {
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const data = await res.json();
-    console.log(data);
-    dispatch({
-      type: "GET_POST_DATA",
-      payload: data,
-    });
-  };
-};
-
 export default postsReducer;
