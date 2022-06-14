@@ -7,7 +7,6 @@ import { Button } from "@mui/material";
 import Post from "./page/Post";
 import EventsIndex from "./page/EventsIndex";
 import SimpleForm from "./page/SimpleForm";
-import { data } from "autoprefixer";
 import axios from "axios";
 
 const App = () => {
